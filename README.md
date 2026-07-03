@@ -1,7 +1,7 @@
 # RACEFLOW — Room Service
 
 > [!IMPORTANT]
-> Este repositorio contiene el **Room Service** de RaceFlow.
+> Este repositorio contiene el **Room Service** de RaceFlow: gestion de salas de competicion.
 
 > Para informacion general consulta el [perfil de la organizacion](https://github.com/RaceFlowECI).
 
@@ -19,6 +19,18 @@
 ---
 
 ## Descripcion general
+
+> [!NOTE]
+> Microservicio de gestion de salas de competicion. Crea salas con un codigo unico de 6 caracteres, gestiona su estado (WAITING, ACTIVE, FINISHED) y publica eventos en RabbitMQ cuando una sala cambia de estado.
+
+### Responsabilidades principales
+
+| Responsabilidad | Descripcion |
+|---|---|
+| **Creacion** | Genera salas con codigo unico y las persiste en PostgreSQL. |
+| **Estado** | Controla las transiciones WAITING → ACTIVE → FINISHED. |
+| **Eventos** | Publica en RabbitMQ cuando una sala se activa o finaliza. |
+| **Configuracion** | Permite definir deporte, duracion y numero maximo de participantes. |
 
 ---
 
