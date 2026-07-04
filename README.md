@@ -119,6 +119,21 @@ mvn spring-boot:run
 
 ## Endpoints REST
 
+| Metodo | Ruta | Auth | Descripcion |
+|---|---|---|---|
+| `POST` | `/rooms` | JWT | Crea una nueva sala de competicion. |
+| `GET` | `/rooms/{code}` | JWT | Obtiene la informacion de una sala por su codigo. |
+| `PATCH` | `/rooms/{code}/start` | JWT | Activa la sala (WAITING → ACTIVE). |
+| `PATCH` | `/rooms/{code}/finish` | JWT | Finaliza la sala (ACTIVE → FINISHED). |
+
+### Ejemplo: crear sala
+```bash
+curl -X POST http://localhost:8082/rooms \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"sport":"RUNNING","maxParticipants":10,"durationMinutes":30}'
+```
+
 ---
 
 ## Pruebas y calidad
