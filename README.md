@@ -57,6 +57,31 @@
 
 ## Estructura del proyecto
 
+```text
+raceflow-room-service/
+├── .github/workflows/
+├── .env.example
+├── .gitignore
+├── Dockerfile
+├── pom.xml
+└── src/main/java/edu/eci/arsw/raceflow/room/
+    ├── RoomApplication.java
+    ├── config/
+    │   └── RabbitMQConfig.java
+    ├── controller/
+    │   └── RoomController.java
+    ├── dto/
+    │   ├── CreateRoomRequest.java
+    │   └── RoomResponse.java
+    ├── model/
+    │   └── Room.java
+    ├── repository/
+    │   └── RoomRepository.java
+    └── service/
+        ├── RoomService.java
+        └── RoomEventPublisher.java
+```
+
 ---
 
 ## Configuracion local
