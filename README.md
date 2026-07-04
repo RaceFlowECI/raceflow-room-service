@@ -86,6 +86,35 @@ raceflow-room-service/
 
 ## Configuracion local
 
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/RaceFlowECI/raceflow-room-service.git
+cd raceflow-room-service
+```
+
+### 2. Compilar
+```bash
+mvn clean install
+```
+
+### 3. Configurar variables de entorno
+```bash
+cp .env.example .env
+```
+```env
+DB_HOST=localhost
+DB_USER=raceflow
+DB_PASSWORD=secret
+RABBITMQ_HOST=localhost
+```
+
+### 4. Ejecutar
+```bash
+mvn spring-boot:run
+```
+> [!TIP]
+> El servicio arranca en `http://localhost:8082`. Requiere PostgreSQL y RabbitMQ.
+
 ---
 
 ## Endpoints REST
