@@ -137,8 +137,17 @@ curl -X POST http://localhost:8082/rooms \
 ---
 
 ## Pruebas y calidad
+```bash
+mvn test
+mvn clean test jacoco:report
+```
 
 ---
 
 ## CI/CD
 
+| Campo | Valor |
+|---|---|
+| Puerto | 8082 |
+| Plataforma | _por definir_ |
+| Ultima version | ![CI](https://github.com/RaceFlowECI/raceflow-room-service/actions/workflows/ci.yml/badge.svg) |
