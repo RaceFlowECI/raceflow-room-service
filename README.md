@@ -1,5 +1,7 @@
 # RACEFLOW — Room Service
 
+![Build](https://github.com/RaceFlowECI/raceflow-room-service/actions/workflows/build.yml/badge.svg)
+
 > [!IMPORTANT]
 > Este repositorio contiene el **Room Service** de RaceFlow: gestion de salas de competicion.
 
