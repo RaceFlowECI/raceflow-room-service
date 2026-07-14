@@ -4,7 +4,7 @@ import io.micrometer.core.instrument.*;
 import org.springframework.stereotype.Component;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/** Micrometer counters/gauges for room-service, exposed at {@code /actuator/prometheus}. */
+/** Contadores/gauges de Micrometer para room-service, expuestos en {@code /actuator/prometheus}. */
 @Component
 public class RoomMetrics {
 
@@ -12,7 +12,7 @@ public class RoomMetrics {
     private final Counter joinAttempts;
     private final AtomicInteger activeRooms = new AtomicInteger(0);
 
-    /** @param registry the Micrometer registry to bind these meters to */
+    /** @param registry el registro de Micrometer al cual asociar estas métricas */
     public RoomMetrics(MeterRegistry registry) {
         this.roomsCreated = Counter.builder("raceflow.rooms.created")
                 .description("Total rooms created")
@@ -34,19 +34,19 @@ public class RoomMetrics {
         Counter.builder("raceflow.rooms.join.attempts").tag("result", "full").register(registry);
     }
 
-    /** Increments the total rooms-created counter. */
+    /** Incrementa el contador total de salas creadas. */
     public void recordRoomCreated() { roomsCreated.increment(); }
     /**
-     * Increments the join-attempts counter, tagged by result.
+     * Incrementa el contador de intentos de unión, etiquetado por resultado.
      *
-     * @param result   one of {@code success}, {@code invalid_code}, {@code full}
-     * @param registry the registry to resolve the tagged counter from
+     * @param result   uno de {@code success}, {@code invalid_code}, {@code full}
+     * @param registry el registro del cual resolver el contador etiquetado
      */
     public void recordJoinAttempt(String result, MeterRegistry registry) {
         registry.counter("raceflow.rooms.join.attempts", "result", result).increment();
     }
-    /** Increments the active-rooms gauge. */
+    /** Incrementa el gauge de salas activas. */
     public void incrementActiveRooms() { activeRooms.incrementAndGet(); }
-    /** Decrements the active-rooms gauge. */
+    /** Decrementa el gauge de salas activas. */
     public void decrementActiveRooms() { activeRooms.decrementAndGet(); }
 }

@@ -4,13 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Entry point of the Room Service skeleton. Room lifecycle and live-session
- * responsibilities were consolidated into realtime-service; this module is
- * kept as a placeholder microservice with its metrics scaffolding in place.
+ * Punto de entrada del esqueleto de Room Service. Las responsabilidades de ciclo
+ * de vida de salas y sesiones en vivo se consolidaron en realtime-service; este
+ * módulo se mantiene como un microservicio placeholder con su andamiaje de métricas en su lugar.
  */
 @SpringBootApplication
 public class RoomApplication {
-    /** @param args command-line arguments passed to Spring Boot */
+    /** @param args argumentos de línea de comandos pasados a Spring Boot */
     public static void main(String[] args) {
         SpringApplication.run(RoomApplication.class, args);
     }
